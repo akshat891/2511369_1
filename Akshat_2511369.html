@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharti Airtel: A Digital Powerhouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .stat-card h3 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .stat-card p {
+            font-size: 1.125rem;
+        }
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .flow-item {
+            border-left: 3px solid #41C9E2;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .flow-item:hover {
+            background-color: #F0F9FF;
+            border-left-color: #004AAD;
+        }
+        .hero-bg {
+            background-color: #004AAD;
+            background-image: radial-gradient(#008DDA 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        nav a {
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #008DDA;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+    <!-- Palette: Brilliant Blues. No Mermaid JS or SVG was used in this file. -->
+    <header class="hero-bg text-white text-center py-20 px-4">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-wide">Bharti Airtel</h1>
+        <p class="mt-4 text-xl md:text-2xl font-light text-cyan-200">A Digital Powerhouse Connecting Billions</p>
+    </header>
+
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8 overflow-x-auto">
+                <a href="#at-a-glance" class="font-semibold text-gray-600 whitespace-nowrap">At a Glance</a>
+                <a href="#business-ecosystem" class="font-semibold text-gray-600 whitespace-nowrap">Ecosystem</a>
+                <a href="#growth-story" class="font-semibold text-gray-600 whitespace-nowrap">Growth Story</a>
+                <a href="#financials" class="font-semibold text-gray-600 whitespace-nowrap">Financials</a>
+                <a href="#strategy" class="font-semibold text-gray-600 whitespace-nowrap">Strategy</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4">
+        
+        <section id="at-a-glance" class="py-12 md:py-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#004AAD]">Airtel at a Glance: Global Scale</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="stat-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#008DDA]">
+                    <h3 class="text-[#004AAD]">590.5 Mn</h3>
+                    <p class="text-gray-600">Total Customers</p>
+                </div>
+                <div class="stat-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#008DDA]">
+                    <h3 class="text-[#004AAD]">17</h3>
+                    <p class="text-gray-600">Countries of Presence</p>
+                </div>
+                <div class="stat-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#008DDA]">
+                    <h3 class="text-[#004AAD]">2 Bn+</h3>
+                    <p class="text-gray-600">Population Covered</p>
+                </div>
+                 <div class="stat-card bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#008DDA]">
+                    <h3 class="text-[#004AAD]">#1</h3>
+                    <p class="text-gray-600">Integrated Provider in India</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="business-ecosystem" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">Our Business Ecosystem</h2>
+                     <p class="text-center text-gray-600 mb-6">Airtel's diversified business model is the engine of its robust financial performance, catering to a wide range of customer needs from individual mobile services to comprehensive enterprise solutions.</p>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-6 rounded-lg border-l-4 border-cyan-400 flex items-center space-x-4">
+                            <span class="text-3xl">📱</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#004AAD]">Mobile Services</h4>
+                                <p class="text-gray-600 text-sm">High-speed 4G/5G data, voice, and roaming, covering over 97% of India's population.</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg border-l-4 border-cyan-400 flex items-center space-x-4">
+                             <span class="text-3xl">🗼</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#004AAD]">Passive Infrastructure</h4>
+                                <p class="text-gray-600 text-sm">Operating one of the world's largest telecom tower networks through its subsidiary, Indus Towers.</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg border-l-4 border-cyan-400 flex items-center space-x-4">
+                            <span class="text-3xl">💼</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#004AAD]">Airtel Business</h4>
+                                <p class="text-gray-600 text-sm">India's leading ICT provider offering cloud, cybersecurity, and IoT solutions to enterprises.</p>
+                            </div>
+                        </div>
+                         <div class="bg-slate-50 p-6 rounded-lg border-l-4 border-cyan-400 flex items-center space-x-4">
+                            <span class="text-3xl">🏠</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#004AAD]">Homes Services</h4>
+                                <p class="text-gray-600 text-sm">High-speed broadband and fixed-line services delivering connectivity to households across 1,476 cities.</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg border-l-4 border-cyan-400 flex items-center space-x-4">
+                            <span class="text-3xl">📺</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-[#004AAD]">Digital TV Services</h4>
+                                <p class="text-gray-600 text-sm">Rich home entertainment via DTH and IPTV, with over 700 channels and 22+ OTT apps.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth-story" class="py-12 md:py-16">
+             <h2 class="text-3xl font-bold text-center mb-8 text-[#004AAD]">A Sustained Growth Story</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-center mb-1 text-[#004AAD]">Expanding Customer Base</h3>
+                    <p class="text-center text-gray-600 mb-6">Consistent growth in total customers reflects strong market trust and service quality.</p>
+                    <div class="chart-container">
+                        <canvas id="customerGrowthChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-center mb-1 text-[#004AAD]">Soaring Market Valuation</h3>
+                     <p class="text-center text-gray-600 mb-6">Airtel's market capitalization has seen exponential growth over the last decade.</p>
+                    <div class="chart-container">
+                        <canvas id="marketCapChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="financials" class="py-12 md:py-16 bg-white rounded-lg shadow-inner">
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#004AAD]">Robust Financial Performance</h2>
+                 <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Airtel's financial trajectory shows strong, consistent growth across key metrics, highlighting operational excellence and effective strategy execution. All figures are consolidated.</p>
+                <div class="chart-container max-w-4xl h-[500px] max-h-[60vh]">
+                    <canvas id="financialsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="py-12 md:py-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#004AAD]">Strategic Pillars of Innovation</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Airtel's future-forward strategy is built on a foundation of technological leadership, smart partnerships, and a relentless focus on creating value for customers and stakeholders.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+                 <div class="flow-item p-4 rounded-md">
+                    <div class="text-4xl mb-2">💡</div>
+                    <h4 class="font-bold text-[#004AAD]">Digital First</h4>
+                    <p class="text-sm text-gray-600">Pioneering AI-powered solutions like the Anti-SPAM tool to enhance customer safety and experience.</p>
+                </div>
+                <div class="flow-item p-4 rounded-md">
+                    <div class="text-4xl mb-2">📡</div>
+                    <h4 class="font-bold text-[#004AAD]">5G Expansion</h4>
+                    <p class="text-sm text-gray-600">Rapidly rolling out Airtel 5G Plus to set new industry benchmarks for speed and reliability.</p>
+                </div>
+                <div class="flow-item p-4 rounded-md">
+                    <div class="text-4xl mb-2">🤝</div>
+                    <h4 class="font-bold text-[#004AAD]">Key Partnerships</h4>
+                    <p class="text-sm text-gray-600">Collaborating with global leaders like Google, Apple & SpaceX to deliver cutting-edge services.</p>
+                </div>
+                <div class="flow-item p-4 rounded-md">
+                    <div class="text-4xl mb-2">💰</div>
+                    <h4 class="font-bold text-[#004AAD]">Financial Discipline</h4>
+                    <p class="text-sm text-gray-600">Executing a 'War on Waste' and proactively prepaying debt to strengthen the balance sheet.</p>
+                </div>
+                <div class="flow-item p-4 rounded-md">
+                    <div class="text-4xl mb-2">🌱</div>
+                    <h4 class="font-bold text-[#004AAD]">Sustainability</h4>
+                    <p class="text-sm text-gray-600">Leading initiatives like "Green 5G" and rural expansion to connect communities responsibly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-[#004AAD] text-white text-center p-8">
+        <div class="container mx-auto">
+            <h3 class="text-lg font-semibold text-cyan-200 mb-4">Presented to</h3>
+            <div class="flex justify-center items-center space-x-8">
+                <img src="https://i.imgur.com/L67a29p.png" alt="IIM Udaipur Logo" class="h-20">
+                <img src="https://i.imgur.com/O13aC1A.jpg" alt="Placement Preparation Committee Logo" class="h-20">
+            </div>
+            <p class="mt-6 text-sm">Data sourced from Bharti Airtel's Integrated Report and Annual Financial Statements 2024-25.</p>
+            <p class="text-xs text-cyan-300 mt-1">Infographic created by Canvas Infographics.</p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const chartTooltip = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                          return label.join(' ');
+                        } else {
+                          return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                labels: {
+                    color: '#374151'
+                }
+            }
+        }
+    };
+
+    const wrapLabel = (label) => {
+        if (label.length > 16) {
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > 16) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+        return label;
+    };
+    
+    const palette = {
+        deepBlue: '#004AAD',
+        brightBlue: '#008DDA',
+        cyan: '#41C9E2',
+        lightCyan: '#ACE2E1',
+        accent: '#F39F5A'
+    };
+
+    const revenueCtx = document.getElementById('revenueChart');
+    if(revenueCtx) {
+        new Chart(revenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Mobile Services (India)', wrapLabel('Passive Infrastructure'), 'Airtel Business', 'Homes Services', 'Digital TV Services'],
+                datasets: [{
+                    label: 'Revenue Breakdown (FY 2024-25)',
+                    data: [1002500, 301228, 220935, 59044, 30608],
+                    backgroundColor: [palette.deepBlue, palette.brightBlue, palette.cyan, palette.lightCyan, palette.accent],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                     ...chartTooltip.plugins,
+                    title: {
+                        display: true,
+                        text: 'Revenue Breakdown (FY 2024-25 in ₹ Mn)',
+                        color: '#374151',
+                        font: { size: 16 }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#374151',
+                            boxWidth: 15,
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    const customerGrowthCtx = document.getElementById('customerGrowthChart');
+    if(customerGrowthCtx) {
+        new Chart(customerGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['FY 2020-21', 'FY 2021-22', 'FY 2022-23', 'FY 2023-24', 'FY 2024-25'],
+                datasets: [{
+                    label: 'Total Customers (in Mn)',
+                    data: [459.8, 489.7, 518.4, 561.9, 590.5],
+                    backgroundColor: palette.brightBlue,
+                    borderColor: palette.deepBlue,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#374151' },
+                        grid: { color: '#E5E7EB' }
+                    },
+                    x: {
+                        ticks: { color: '#374151' },
+                        grid: { display: false }
+                    }
+                },
+                plugins: chartTooltip.plugins
+            }
+        });
+    }
+    
+    const marketCapCtx = document.getElementById('marketCapChart');
+    if(marketCapCtx) {
+        new Chart(marketCapCtx, {
+            type: 'line',
+            data: {
+                labels: ['FY 2014-15', 'FY 2024-25'],
+                datasets: [{
+                    label: 'Market Capitalization (in ₹ Bn)',
+                    data: [1572, 10378],
+                    borderColor: palette.deepBlue,
+                    backgroundColor: 'rgba(0, 74, 173, 0.1)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#374151' },
+                        grid: { color: '#E5E7EB' }
+                    },
+                    x: {
+                        ticks: { color: '#374151' },
+                        grid: { display: false }
+                    }
+                },
+                plugins: chartTooltip.plugins
+            }
+        });
+    }
+    
+    const financialsCtx = document.getElementById('financialsChart');
+    if (financialsCtx) {
+        new Chart(financialsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['FY 20-21', 'FY 21-22', 'FY 22-23', 'FY 23-24', 'FY 24-25'],
+                datasets: [
+                    {
+                        label: 'Revenue',
+                        data: [1006158, 1319042, 1539257, 1643643, 1815110],
+                        backgroundColor: palette.deepBlue,
+                    },
+                    {
+                        label: 'EBITDA',
+                        data: [461387, 684010, 768378, 889064, 1049994],
+                        backgroundColor: palette.brightBlue,
+                    },
+                    {
+                        label: 'Net Profit',
+                        data: [-86186, 19532, 94153, 153543, 264573],
+                        backgroundColor: palette.cyan,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            color: '#374151',
+                            callback: function(value) {
+                                return (value / 1000000).toFixed(1) + 'M';
+                            }
+                        },
+                         grid: { color: '#E5E7EB' }
+                    },
+                    x: {
+                        ticks: { color: '#374151' },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    ...chartTooltip.plugins,
+                    title: {
+                        display: true,
+                        text: 'Consolidated Financial Performance (in ₹ Mn)',
+                        color: '#374151',
+                        font: { size: 16 }
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
